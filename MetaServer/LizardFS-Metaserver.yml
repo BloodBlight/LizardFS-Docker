@@ -5,7 +5,7 @@
 version: "2.1"
 services:
   LizardFS-Chunkserver-Test:
-    image: bloodblight/lizardfs-metaserver:2022-01-13
+    image: bloodblight/lizardfs-metaserver:V0.1
     container_name: LizardFS-Metaserver-Test
     volumes:
       - /DockerVolumes/LizardFS-Metaserver:/var/lib/lizardfs

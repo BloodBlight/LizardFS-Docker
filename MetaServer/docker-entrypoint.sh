@@ -61,6 +61,12 @@ echo "Starting LizardFS Meta server..." | ts '[%Y-%m-%d %H:%M:%S]'
 #runuser -l LizardFS -c "/usr/sbin/lfsmaster -c /etc/lizardfs/metaserver.cfg -d $@"
 /usr/sbin/lfsmaster -u -p /var/lib/lizardfs/metaserver-pid.txt -c /etc/lizardfs/metaserver.cfg -d $@
 
+while :
+do
+  pgrep lfsmaster > /dev/null || exit 1
+  sleep 15
+done
+
 echo "We should not be here!  Did the server crash?" | ts '[%Y-%m-%d %H:%M:%S]'
 
 #echo "Starting LizardFS Meta server..."
